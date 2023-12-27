@@ -2,6 +2,7 @@ using CustomerApi.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
 
 var connectionString = builder.Configuration.GetConnectionString("CustomerConnection");
 builder.Services.AddDbContext<CustomerContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));

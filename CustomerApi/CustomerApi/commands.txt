@@ -13,7 +13,4 @@ Dockering
 
 docker build --rm -t customers:latest -f Dockerfile .
 
-docker run --rm -p 80:80 customers:latest
-
-
-Lembrar de alterar IP do banco de dados localhost  'appsettings.json'
+docker run -e ConnectionStrings__CustomerConnection="server=192.168.0.139;database=customer;user=root;password=123456" -p 80:80 customers:latest
