@@ -1,0 +1,19 @@
+
+Migration
+
+executa a migration
+Add-Migration CreatingCustomerTable
+
+commita no banco
+Update-Database
+
+
+
+Dockering
+
+docker build --rm -t customers:latest -f Dockerfile .
+
+docker run --rm -p 80:80 customers:latest
+
+
+Lembrar de alterar IP do banco de dados localhost  'appsettings.json'
