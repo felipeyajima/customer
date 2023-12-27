@@ -11,6 +11,13 @@ Update-Database
 
 Dockering
 
-docker build --rm -t customers:latest -f Dockerfile .
+docker build --rm -t felipebatista765/customers:v1 -t felipebatista765/customers:latest -f Dockerfile .
 
 docker run -e ConnectionStrings__CustomerConnection="server=192.168.0.139;database=customer;user=root;password=123456" -p 80:80 customers:latest
+
+
+docker login
+
+
+docker push felipebatista765/customers:latest
+docker push felipebatista765/customers:v1
